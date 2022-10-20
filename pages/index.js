@@ -3,12 +3,14 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [sexInput, setSexInput] = useState("Male");
-  const [animalInput, setAnimalInput] = useState("Human");
+  const [sexInput, setSexInput] = useState("male");
+  const [animalInput, setAnimalInput] = useState("human");
   const [result, setResult] = useState();
+  const [loading, setLoading] = useState();
 
   async function onSubmit(event) {
     event.preventDefault();
+    setLoading(true);
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -18,6 +20,7 @@ export default function Home() {
     });
     const data = await response.json();
     setResult(data.result);
+    setLoading(false);
   }
 
   return (
@@ -28,7 +31,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h3>Name my baby</h3>
+        <h3>Name my baby {animalInput}</h3>
+        <p>The AI-Powered Baby Name Generator</p>
         <form onSubmit={onSubmit}>
           <select onChange={(e) => setSexInput(e.target.value)}>
             <option value="male">Male</option>
@@ -44,7 +48,7 @@ export default function Home() {
             <option value="wizard">Wizard</option>
             <option value="god">God</option>
           </select>
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Generate some names" disabled={loading === true ? true : false} />
         </form>
         <div className={styles.result}>{result}</div>
       </main>
