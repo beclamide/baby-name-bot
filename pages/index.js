@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>Baby Name AI Bot</title>
+        {/* <link rel="icon" href="/dog.png" /> */}
       </Head>
 
       <main className={styles.main}>
