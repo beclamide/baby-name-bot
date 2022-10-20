@@ -33,6 +33,7 @@ export default function Home() {
           <select onChange={(e) => setSexInput(e.target.value)}>
             <option value="male">Male</option>
             <option value="female">Female</option>
+            <option value="non-binary">Non-Binary</option>
           </select>
           <select onChange={(e) => setAnimalInput(e.target.value)}>
             <option value="human">Human</option>
