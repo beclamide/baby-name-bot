@@ -28,7 +28,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {/* <img src="/dog.png" className={styles.icon} /> */}
         <h3>Name my baby</h3>
         <form onSubmit={onSubmit}>
           <select onChange={(e) => setSexInput(e.target.value)}>
@@ -44,13 +43,6 @@ export default function Home() {
             <option value="wizard">Wizard</option>
             <option value="god">God</option>
           </select>
-          {/* <input
-            type="text"
-            name="sex"
-            placeholder="Choose a sex"
-            value={sexInput}
-            onChange={(e) => setSexInput(e.target.value)}
-          /> */}
           <input type="submit" value="Generate names" />
         </form>
         <div className={styles.result}>{result}</div>
