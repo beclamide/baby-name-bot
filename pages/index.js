@@ -3,7 +3,8 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [sexInput, setSexInput] = useState("Male");
+  const [animalInput, setAnimalInput] = useState("Human");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -13,11 +14,10 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ animal: animalInput }),
+      body: JSON.stringify({ sex: sexInput, animal: animalInput }),
     });
     const data = await response.json();
     setResult(data.result);
-    setAnimalInput("");
   }
 
   return (
@@ -28,16 +28,29 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        {/* <img src="/dog.png" className={styles.icon} /> */}
+        <h3>Name my baby</h3>
         <form onSubmit={onSubmit}>
-          <input
+          <select onChange={(e) => setSexInput(e.target.value)}>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <select onChange={(e) => setAnimalInput(e.target.value)}>
+            <option value="human">Human</option>
+            <option value="squirrel">Squirrel</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="elf">Elf</option>
+            <option value="wizard">Wizard</option>
+            <option value="god">God</option>
+          </select>
+          {/* <input
             type="text"
-            name="animal"
-            placeholder="Enter an animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
-          />
+            name="sex"
+            placeholder="Choose a sex"
+            value={sexInput}
+            onChange={(e) => setSexInput(e.target.value)}
+          /> */}
           <input type="submit" value="Generate names" />
         </form>
         <div className={styles.result}>{result}</div>
