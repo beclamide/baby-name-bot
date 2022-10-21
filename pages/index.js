@@ -39,7 +39,7 @@ export default function Home() {
             <option value="female">Female</option>
             <option value="non-binary">Non-Binary</option>
           </select>
-          <select onChange={(e) => setAnimalInput(e.target.value)}>
+          {/* <select onChange={(e) => setAnimalInput(e.target.value)}>
             <option value="human">Human</option>
             <option value="squirrel">Squirrel</option>
             <option value="cat">Cat</option>
@@ -47,7 +47,9 @@ export default function Home() {
             <option value="elf">Elf</option>
             <option value="wizard">Wizard</option>
             <option value="god">God</option>
-          </select>
+          </select> */}
+          <input type="text" onChange={(e) => setAnimalInput(e.target.value)} value={animalInput} required />
+
           <input type="submit" value="Generate some names" disabled={loading === true ? true : false} />
           <div className={styles.result}>{result}</div>
         </form>
