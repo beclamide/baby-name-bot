@@ -19,7 +19,7 @@ export default function Home() {
       body: JSON.stringify({ sex: sexInput, animal: animalInput }),
     });
     const data = await response.json();
-    setResult(`Here are 3 names for you to consider: ${data.result}`);
+    setResult(`Here are 3 names for you: ${data.result}`);
     setLoading(false);
   }
 
