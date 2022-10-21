@@ -52,7 +52,7 @@ export default function Home() {
           <div className={styles.result}>{result}</div>
         </form>
         <copyright>
-          Made with ❤️ by <a target="_blank" href="https://github.com/beclamide">beclamide</a> using OpenAI
+          Made with ☕️ by <a target="_blank" href="https://github.com/beclamide">beclamide</a> using OpenAI
         </copyright>
       </main>
     </div>
