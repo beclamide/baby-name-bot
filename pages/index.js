@@ -51,6 +51,9 @@ export default function Home() {
           <input type="submit" value="Generate some names" disabled={loading === true ? true : false} />
           <div className={styles.result}>{result}</div>
         </form>
+        <copyright>
+          Made with ❤️ by <a target="_blank" href="https://github.com/beclamide">beclamide</a> using OpenAI
+        </copyright>
       </main>
     </div>
   );
