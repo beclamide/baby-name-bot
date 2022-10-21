@@ -49,8 +49,8 @@ export default function Home() {
             <option value="god">God</option>
           </select>
           <input type="submit" value="Generate some names" disabled={loading === true ? true : false} />
+          <div className={styles.result}>{result}</div>
         </form>
-        <div className={styles.result}>{result}</div>
       </main>
     </div>
   );
