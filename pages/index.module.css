@@ -49,6 +49,7 @@
 }
 .main select,
 .main input[type="text"] {
+  font-size: 14px;
   padding: 12px 16px;
   border: 1px solid #10a37f;
   border-radius: 4px;

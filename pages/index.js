@@ -27,7 +27,11 @@ export default function Home() {
     <div>
       <Head>
         <title>Baby Name AI Bot</title>
-        {/* <link rel="icon" href="/dog.png" /> */}
+        <meta charset="UTF-8"/>
+        <meta name="description" content="The AI-powered baby name generator"/>
+        <meta name="keywords" content="ai, baby, name, generator"/>
+        <meta name="author" content="John Bower"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
 
       <main className={styles.main}>
