@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Baby Name AI Bot</title>
+        <title>Name My Baby Human</title>
         <meta charset="UTF-8"/>
         <meta name="description" content="The AI-powered baby name generator"/>
         <meta name="keywords" content="ai, baby, name, generator"/>
@@ -43,15 +43,7 @@ export default function Home() {
             <option value="female">Female</option>
             <option value="non-binary">Non-Binary</option>
           </select>
-          {/* <select onChange={(e) => setAnimalInput(e.target.value)}>
-            <option value="human">Human</option>
-            <option value="squirrel">Squirrel</option>
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-            <option value="elf">Elf</option>
-            <option value="wizard">Wizard</option>
-            <option value="god">God</option>
-          </select> */}
+
           <input type="text" onChange={(e) => setAnimalInput(e.target.value)} value={animalInput} required />
 
           <input type="submit" value="Generate some names" disabled={loading === true ? true : false} />
